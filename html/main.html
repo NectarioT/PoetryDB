@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Discord Poem Sender</title>
+		<style>
+			body, form{
+				margin: 0 auto;
+				max-width:800px;
+				overflow-x:hidden;
+			}
+			fieldset{
+				display: flex;
+			}
+			input#artist{
+				flex-grow:100;
+				margin: 0 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="search" method="get">
+			<fieldset>
+				<label for="poet">Poet Name:</label><br>
+				<input id="poet" name="poet" type="text" /><br>
+			
+				<input type="submit" value="Search" />
+			</fieldset>
+		</form>
+		<a href="https://discord.com/api/oauth2/authorize?client_id=920485122921361438&permissions=8&scope=bot">dont have a bot on your server? </a>
+	</body>
+</html>
