@@ -1,0 +1,21 @@
+title discordBard 3LO Auth 2.0
+
+alt havent decided on how to show the apis but ill figure that out as i go along
+end 
+
+participant User
+participant server
+participant PoetryDB
+participant DiscordBot
+
+User ->server: Browser requests "/", the root of our site
+server -> User: Sends 200 okay and returns index.html form
+User->server: User fills our the form and gives the author name \nthat wants to be loaded into the discord bot.\nIf the form is empty it assumes that the user wants a random poem
+
+
+server ->PoetryDB: gets the information from the poetryDB. It recieves 200
+PoetryDB->DiscordBot: stores the information that the discord bot will access
+PoetryDB->server:signals that the information stream has finished by signaling 200OK\nthe user can resubmit a new random poem to the bot if they wish
+
+note over DiscordBot: at this point if the user wants\nto access the streamed data\nthe user needs the discord bot in their server\n\nTo do this the user needs to authenticate their account to the \nwebsite and give access to the bot to join said server.\nDiscord makes authentication very easy
+
